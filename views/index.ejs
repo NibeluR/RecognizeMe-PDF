@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>RecognizeMe</title>
+</head>
+<body>
+    <div class="spacer layer"></div>
+    <div class="form-container">
+        <h1>RecognizeMe Image-PDF</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            
+            <input type="file" name="recognizer-project" />
+            <button type="submit">Convert</button>
+        </form>
+    </div>
+
+<section class="faq-section">
+    <h1>FAQ</h1>
+    <ul>
+        <li>What is this app?</li>
+        <p>RecognizeMe is an Optical Character Recognition (OCR) project which can recognize text from your images and convert them into PDF format</p>
+        <li>What languages are supported?</li>
+        <p>For now, this tool supports only English, Russian and Deutsch as recognition databases have large file sizes</p>
+        <li>Can I use this for handwriting?</li>
+        <p>Yes, but this tool is inconsistent for handwriting. Unless you handwrite like a typewriter 😂</p>
+        <li>What files are supported?</li>
+        <p>JPG, PNG, BMP, WebP. It is recommended to use JPG or PNG</p>
+        <li>How does it work?</li>
+        <p>You upload an image from your Explorer and this tool does the rest. The recognition may take some time depending on file size. Once it finishes the process, you will be redirected to created PDF</p>
+        <li>Can I improve text recognition results?</li>
+        <p>Yes, but you'll need to improve the quality of the upload image for the best output results</p> 
+    </ul>
+</section>
+
+</body>
+</html>

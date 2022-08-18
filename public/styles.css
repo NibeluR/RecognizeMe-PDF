@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #242424
+}
+
+.form-container {
+    width: 100%;
+    height: 140vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../background-tool.jpg);
+    background-size: cover;
+    z-index: 0;
+    position: relative;
+    bottom: 200px;
+}
+
+.form-container h1 {
+    position: absolute;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 200px;
+    text-align: center;
+    font-size: 50px;
+}
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 5PX;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+input {
+    border-radius: 20px;
+    padding: 1px;
+    border: 2px solid #c5c3c3;
+    background: #ebebeb;
+    width: 90%;
+}
+
+input::file-selector-button {
+    font-weight: bold;
+    background-image: linear-gradient(to right, #110d16 0%, #80016f  51%, #270553  100%);
+    transition: 0.5s;
+    color: #ffffff;
+    padding: 0.5em;
+    width: 140px;
+    cursor: pointer;
+    border: 2px solid #030303;
+    border-radius: 15px;
+}
+
+input::file-selector-button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #37ff0f;
+    text-decoration: none;
+}
+
+form button {
+    padding: 0px;
+    display: block;
+    height: 45px;
+    background: #1a191b;
+    color: #fff;
+    font-size: 20px;
+    border: 0;
+    border-radius: 15px;
+    width: 30%;
+    align-self: center;
+    outline: none;
+    cursor: pointer;
+    margin: 0px auto 0;
+    background-image: linear-gradient(to right, #110d16 0%, #80016f  51%, #270553  100%);
+    transition: 0.5s;
+    background-size: 200% auto;         
+    box-shadow: 0 0 20px #302020;
+}
+
+form button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #ff1111;
+    text-decoration: none;
+}
+
+.spacer {
+    aspect-ratio: 900/600;
+    object-fit: cover;
+    width: 100%;
+    top: 50vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    z-index: 5;
+    pointer-events: none;
+}
+
+
+.layer {
+    background-image: url('./wave-haikei.svg');
+}
+
+
+.faq-section {
+    background-color: #242424;
+    padding-bottom: 20px;
+    position: relative;
+    z-index: 10;
+    bottom: 200px;
+    height: 20vh;
+}
+
+.faq-section:after {
+    z-index: 9;
+    transform-origin: left top;
+    transform: skewY(3deg);
+}
+
+.faq-section h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+}
+.faq-section ul {
+    text-align: start;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+.faq-section li {
+    font-size: 40px;
+    color: #1dff7b;
+}
+.faq-section p {
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .spacer {
+        top: 80vh;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+@media only screen and (min-width: 1500px) {
+    .spacer {
+        top: 30vh;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}

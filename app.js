@@ -1,7 +1,9 @@
 //declare imports
 const express = require("express");
+const favicon = require('express-favicon');
 const app = express();
 const fs = require("fs");
+
 const multer = require("multer");
 const { TesseractWorker } = require("tesseract.js");
 const worker = new TesseractWorker();
@@ -19,6 +21,8 @@ const upload = multer({ storage: storage }).single("recognizer-project");
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(favicon(__dirname + '/public/favicon.ico'));
+
 
 //Routes
 

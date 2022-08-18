@@ -49,11 +49,11 @@ app.post("/upload", (req, res) => {
 });
 
 app.get('/download', (req, res) => {
-    const file = `${__dirname}/RecognizeMe-result.pdf`;
+    const file = `${__dirname}/recognizeme-result.pdf`;
     res.download(file);
 });
 
 
 //start server
-const PORT = 5000 || process.env.PORT;
-app.listen(process.env.PORT || 3000);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT);

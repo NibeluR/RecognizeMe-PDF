@@ -49,7 +49,7 @@ app.post("/upload", (req, res) => {
 });
 
 app.get('/download', (req, res) => {
-    const file = `${__dirname}/recognizeme-result.pdf`;
+    const file = `${__dirname}/tesseract.js-ocr-result.pdf`;
     res.download(file);
 });
 

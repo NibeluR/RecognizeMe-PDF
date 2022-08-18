@@ -26,7 +26,9 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //Routes
 
-
+app.get("/", (req, res) => {
+    res.render("index");
+});
 
 app.post("/upload", (req, res) => {
     upload(req, res, err => {

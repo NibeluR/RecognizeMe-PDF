@@ -56,4 +56,4 @@ app.get('/download', (req, res) => {
 
 //start server
 const PORT = 5000 || process.env.PORT;
-app.listen(PORT, () => console.log('server is ACTIVE!'));
+app.listen(process.env.PORT || 3000);

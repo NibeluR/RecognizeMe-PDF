@@ -13,10 +13,10 @@
     <div class="form-container">
         <h1>RecognizeMe Image-PDF</h1>
         <form action="/upload" method="POST" enctype="multipart/form-data">
-            
-            <input type="file" name="recognizer-project" />
-            <button type="submit">Convert</button>
+            <input type="file" onchange="ValidateSize(this)" id="formFile" accept=".jpg,.png,.jpeg,.webp,.bmp" name="recognizer-project" />
+            <button onchange="ValidateSize(this)" type="submit">Convert</button>
         </form>
+        <script src="/upload-limit.js"></script>
     </div>
 
 <section class="faq-section">

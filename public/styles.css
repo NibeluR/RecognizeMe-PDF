@@ -33,6 +33,7 @@ body {
     margin-right: auto;
     display: block;
     z-index: 1;
+    display: none;
 }
 
 .form-container {

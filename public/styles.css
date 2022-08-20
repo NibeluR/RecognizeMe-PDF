@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: #242424
+    background: #262626
 }
 
 #modelviewer {
@@ -23,6 +23,7 @@ body {
     overflow: hidden;
     z-index: 2;
     position: absolute;
+    background: #202020;
 }
 
 .backgroundwindow img{
@@ -54,7 +55,7 @@ body {
     font-weight: 600;
     margin-bottom: 200px;
     text-align: center;
-    text-shadow: 1px 1px 10px #120c6d;
+    text-shadow: 4px 4px 3px #000000;
     font-size: 50px;
     z-index: 3;
 }
@@ -90,7 +91,7 @@ input::file-selector-button {
 
 input::file-selector-button:hover {
     background-position: right center; /* change the direction of the change here */
-    color: #37ff0f;
+    color:  #ff0000;
     text-decoration: none;
 }
 

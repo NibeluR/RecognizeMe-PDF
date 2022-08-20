@@ -9,6 +9,12 @@
     <title>RecognizeMe</title>
 </head>
 <body>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <model-viewer id="modelviewer" src="/models/morning_room.glb" poster="/scene-poster.webp" ar ar-modes="webxr scene-viewer quick-look" auto-rotate rotation-per-second="1%" shadow-intensity="1" shadow-softness="1" camera-orbit="-155.1deg 79.17deg auto" camera-target="4.08m -1.5m 12.37m"> </model-viewer>
+    <div class="backgroundwindow"><img src="/background-window.webp"></div>
+
+
+    <script type="module" src="/client.js"></script>
     <div class="spacer layer"></div>
     <div class="form-container">
         <h1>RecognizeMe Image-PDF</h1>
@@ -16,7 +22,7 @@
             <input type="file" onchange="ValidateSize(this)" id="formFile" accept=".jpg,.png,.jpeg,.webp,.bmp" name="recognizer-project" required />
             <button id= onchange="ValidateSize(this)" type="submit">Convert</button>
         </form>
-        <script src="/upload-limit.js"></script>
+        <script type="text/javascript" src="/upload-limit.js"></script>
     </div>
 
 <section class="faq-section">

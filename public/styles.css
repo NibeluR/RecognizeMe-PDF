@@ -17,15 +17,32 @@ body {
     background: #242424
 }
 
+#modelviewer {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+}
+
+.backgroundwindow img{
+    height: 80vh;
+    position: absolute;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    z-index: 1;
+}
+
 .form-container {
     width: 100%;
     height: 140vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../background-tool.jpg);
+    /*background-image: url(../background-tool.jpg);*/
     background-size: cover;
-    z-index: 0;
     position: relative;
     bottom: 200px;
 }
@@ -36,7 +53,9 @@ body {
     font-weight: 600;
     margin-bottom: 200px;
     text-align: center;
+    text-shadow: 1px 1px 10px #120c6d;
     font-size: 50px;
+    z-index: 3;
 }
 form {
     display: flex;
@@ -45,6 +64,7 @@ form {
     width: 100%;
     max-width: 600px;
     border-radius: 10px;
+    z-index: 3;
 }
 
 input {

@@ -3,6 +3,7 @@ const express = require("express");
 const favicon = require('express-favicon');
 const app = express();
 const fs = require("fs");
+const path = require("path");
 
 const multer = require("multer");
 const { TesseractWorker } = require("tesseract.js");
@@ -20,8 +21,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }).single("recognizer-project");
 
 app.set("view engine", "ejs");
-app.use(express.static("public"));
+app.use(express.static("public"));   
 app.use(favicon(__dirname + '/public/favicon.ico'));
+
+//threejs library
 
 
 //Routes

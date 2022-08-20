@@ -187,7 +187,7 @@ form button:hover {
 }
 @media only screen and (min-width: 1500px) {
     .spacer {
-        top: 30vh;
+        top: 25vh;
         display: block;
         width: 100%;
         height: auto;

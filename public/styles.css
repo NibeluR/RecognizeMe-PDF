@@ -23,7 +23,6 @@ body {
     overflow: hidden;
     z-index: 2;
     position: absolute;
-    background: #202020;
 }
 
 .backgroundwindow img{
@@ -34,7 +33,7 @@ body {
     margin-right: auto;
     display: block;
     z-index: 1;
-    display: none;
+
 }
 
 .form-container {
@@ -147,6 +146,10 @@ form button:hover {
     z-index: 10;
     bottom: 200px;
     height: 20vh;
+}
+
+.faq-section a {
+    color: #e0ff33;
 }
 
 .faq-section:after {

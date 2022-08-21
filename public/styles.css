@@ -150,6 +150,7 @@ form button:hover {
 
 .faq-section a {
     color: #e0ff33;
+    text-decoration: none;
 }
 
 .faq-section:after {

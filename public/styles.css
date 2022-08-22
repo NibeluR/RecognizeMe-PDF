@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: #262626
+    background: #242424
 }
 
 #modelviewer {
@@ -133,18 +133,21 @@ form button:hover {
     pointer-events: none;
 }
 
-
-.layer {
-    background-image: url('./wave-haikei.svg');
+svg {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 3;
 }
-
 
 .faq-section {
     background-color: #242424;
     padding-bottom: 20px;
     position: relative;
     z-index: 10;
-    bottom: 200px;
+    bottom: 300px;
     height: 20vh;
 }
 
@@ -168,6 +171,7 @@ form button:hover {
     text-align: start;
     margin-left: 50px;
     margin-bottom: 50px;
+    list-style: none;
 }
 .faq-section li {
     font-size: 40px;
@@ -178,22 +182,4 @@ form button:hover {
     color: #ffffff;
     margin-left: 50px;
     margin-top: 5px;
-}
-
-
-@media only screen and (max-width: 800px) {
-    .spacer {
-        top: 80vh;
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-}
-@media only screen and (min-width: 1500px) {
-    .spacer {
-        top: 25vh;
-        display: block;
-        width: 100%;
-        height: auto;
-    }
 }

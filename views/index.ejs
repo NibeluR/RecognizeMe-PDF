@@ -11,15 +11,34 @@
 </head>
 <body>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <model-viewer id="modelviewer" src="/models/morning-compressed.glb" ar ar-modes="webxr scene-viewer quick-look" auto-rotate rotation-per-second="1%" shadow-intensity="1" camera-orbit="-154.1deg 79.17deg auto" camera-target="4.08m -1.5m 12.37m"> </model-viewer>
+    <model-viewer id="modelviewer" src="/models/magic-room-compressed.glb" poster="/scene-poster.webp" ar ar-modes="webxr scene-viewer quick-look" auto-rotate rotation-per-second="2%" shadow-intensity="1" shadow-softness="1" camera-orbit="60deg 70deg auto" camera-target="-250m -100m -200m"> </model-viewer> 
+
+
+<script>
+        (() => {
+        const modelViewer = document.querySelector('#modelviewer');
+        const orbitCycle = [
+            '60deg 70deg auto',
+            '55deg 70deg auto',
+            '54deg 60deg auto',
+            modelViewer.cameraOrbit
+        ];
+        
+        setInterval(() => {
+            const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
+            modelViewer.cameraOrbit =
+                orbitCycle[(currentOrbitIndex + 2) % orbitCycle.length];
+        }, 10000);
+        })();
+        </script>
 
     <div class="backgroundwindow"><img src="/background-window.webp"></div>
 
 
     <script type="module" src="/client.js"></script>
     <div class="form-container">
-        <h1 class="animate__animated animate__fadeInDown animate__delay-3s">RecognizeMe Image-PDF</h1>
-        <form class="animate__animated animate__zoomIn animate__delay-4s" action="/upload" method="POST" enctype="multipart/form-data">
+        <h1 class="animate__animated animate__fadeInDown animate__delay-2s">RecognizeMe Image-PDF</h1>
+        <form class="animate__animated animate__zoomIn animate__delay-3s" action="/upload" method="POST" enctype="multipart/form-data">
             <input type="file" onchange="ValidateSize(this)" id="formFile" accept=".jpg,.png,.jpeg,.webp,.bmp" name="recognizer-project" required />
             <button id= onchange="ValidateSize(this)" type="submit">Convert</button>
         </form>

@@ -11,24 +11,26 @@
 </head>
 <body>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    <model-viewer id="modelviewer" src="/models/magic-room-compressed.glb" poster="/scene-poster.webp" ar ar-modes="webxr scene-viewer quick-look" auto-rotate rotation-per-second="2%" shadow-intensity="1" shadow-softness="1" camera-orbit="60deg 70deg auto" camera-target="-250m -100m -200m"> </model-viewer> 
+    <model-viewer id="modelviewer" src="/models/magic-room-compressed.glb" poster="/scene-poster.webp" ar ar-modes="webxr scene-viewer quick-look" auto-rotate rotation-per-second="5%" shadow-intensity="1" shadow-softness="1" field-of-view="10deg" camera-orbit="70deg 70deg 150m" camera-target="20m 40m auto"> </model-viewer> 
 
 
 <script>
         (() => {
         const modelViewer = document.querySelector('#modelviewer');
         const orbitCycle = [
-            '60deg 70deg auto',
-            '55deg 70deg auto',
-            '54deg 60deg auto',
+            '60deg 70deg 150m',
+            '55deg 72deg 160m',
+            '54deg 75deg 165m',
+            '30deg 80deg 100m',
+            '60deg 70deg 150m',
             modelViewer.cameraOrbit
         ];
         
         setInterval(() => {
             const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
             modelViewer.cameraOrbit =
-                orbitCycle[(currentOrbitIndex + 2) % orbitCycle.length];
-        }, 10000);
+                orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
+        }, 40000);
         })();
         </script>
 

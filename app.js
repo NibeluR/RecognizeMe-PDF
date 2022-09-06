@@ -24,11 +24,38 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));   
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
+//Uploads deletion
+setInterval(function() {
+  walkDir('./uploads/', function(filePath) {
+  fs.stat(filePath, function(err, stat) {
+  var now = new Date().getTime();
+  var endTime = new Date(stat.mtime).getTime() + 86400000; // 1days in miliseconds
+
+  if (err) { return console.error(err); }
+
+  if (now > endTime) {
+      //console.log('DEL:', filePath);
+    return fs.unlink(filePath, function(err) {
+      if (err) return console.error(err);
+    });
+  }
+})  
+});
+}, 3600000); // DELETE Uploads every 1 hour
+
+function walkDir(dir, callback) {
+fs.readdirSync(dir).forEach( f => {
+  let dirPath = path.join(dir, f);
+  let isDirectory = fs.statSync(dirPath).isDirectory();
+  isDirectory ? 
+    walkDir(dirPath, callback) : callback(path.join(dir, f));
+});
+};
+
 //threejs library
 
 
 //Routes
-
 app.get("/", (req, res) => {
     res.render("index");
 });
@@ -36,7 +63,7 @@ app.get("/", (req, res) => {
 app.post("/upload", (req, res) => {
     upload(req, res, err => {
         fs.readFile(`./uploads/${req.file.originalname}`, (err, data) => {
-            if (err) return console.log('This is error', err);
+            if (err) return console.log('Something went wrong.', err);
 
             worker
             .recognize(data, "eng+rus+deu", {tessjs_create_pdf: "1" })
@@ -55,8 +82,6 @@ app.get('/download', (req, res) => {
     const file = `${__dirname}/tesseract.js-ocr-result.pdf`;
     res.download(file);
 });
-
-
 
 //start server
 app.listen(process.env.PORT || 3000, function(){

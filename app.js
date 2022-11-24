@@ -41,7 +41,8 @@ setInterval(function() {
   }
 })  
 });
-}, 3600000); // DELETE Uploads every 1 hour
+}, 1800000); // DELETE Uploads every 30min
+console.log('uploads folder is cleaned');
 
 function walkDir(dir, callback) {
 fs.readdirSync(dir).forEach( f => {
